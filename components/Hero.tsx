@@ -31,10 +31,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mt-10 text-6xl md:text-8xl font-black tracking-tight"
+          className="mt-10 text-6xl md:text-8xl font-black tracking-wider"
         >
           <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
-            Raffi Muloc
+            RAFFI MULOC
           </span>
         </motion.h1>
 
@@ -85,7 +85,14 @@ export function Hero() {
               key={badge}
               className="px-6 py-3 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-gray-200 text-sm md:text-base hover:bg-white/[0.08] transition"
             >
-              ✦ {badge}
+              <motion.span
+                animate={{ opacity: [1, 0.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="mr-2 inline-block text-green-400"
+              >
+                ✦
+              </motion.span>
+              {badge}
             </div>
           ))}
         </motion.div>
