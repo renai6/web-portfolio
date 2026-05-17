@@ -1,0 +1,134 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { socials } from "@/lib/page-data";
+
+export function Hero() {
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/RAFFI_MULOC.pdf";
+    link.download = "RAFFI_MULOC.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleSocialRedirect = (link: string) => {
+    window.open(link, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <section className="relative min-h-screen overflow-hidden flex items-center justify-center px-6">
+      {/* GRADIENTS */}
+      <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-green-600/20 blur-[160px]" />
+
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-5xl mx-auto text-center">
+        {/* LOGO */}
+
+        {/* TITLE */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="mt-10 text-6xl md:text-8xl font-black tracking-tight"
+        >
+          <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+            Raffi Muloc
+          </span>
+        </motion.h1>
+
+        {/* LINE */}
+        <motion.div
+          initial={{ opacity: 0, width: 0 }}
+          animate={{ opacity: 1, width: 600 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="h-[4px] rounded-full bg-gradient-to-r from-green-500 to-emerald-400 mx-auto mt-8"
+        />
+
+        {/* SUBTITLE */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-10 text-xl md:text-3xl font-light text-white"
+        >
+          Full Stack Engineer & System Architect
+        </motion.h2>
+
+        {/* DESCRIPTION */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="mt-8 max-w-4xl mx-auto text-gray-300 text-md md:text-lg leading-relaxed"
+        >
+          Experienced Full Stack Software Engineer with 8 years of expertise in
+          building scalable applications and silently judging badly named
+          variables.
+        </motion.p>
+
+        {/* BADGES */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="flex flex-wrap items-center justify-center gap-4 mt-12"
+        >
+          {[
+            "8+ Years Experience",
+            "Senior Software Engineer @ Grow, Inc.",
+            "Arc Certified Developer @ Arc.dev",
+            "Electronic Data Processing Specialist - DICT",
+          ].map((badge) => (
+            <div
+              key={badge}
+              className="px-6 py-3 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl text-gray-200 text-sm md:text-base hover:bg-white/[0.08] transition"
+            >
+              ✦ {badge}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* SOCIALS */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="flex items-center justify-center gap-6 mt-14"
+        >
+          {socials.map((s) => (
+            <button
+              key={s.name}
+              aria-label={s.name}
+              onClick={() => handleSocialRedirect(s.link)}
+              className="w-16 h-16 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl flex items-center justify-center hover:scale-110 hover:border-emerald-400/40 transition-all"
+            >
+              {s.svg}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* BUTTONS */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.1, duration: 0.8 }}
+          className="flex flex-col md:flex-row items-center justify-center gap-6 mt-16"
+        >
+          <button
+            onClick={handleDownloadResume}
+            className="group relative px-10 py-5 rounded-2xl overflow-hidden border border-green-400/30 bg-[#0a2414] hover:scale-105 transition-all"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition" />
+
+            <span className="relative z-10 flex items-center gap-3 text-lg font-semibold">
+              Download Resume
+              <span>↓</span>
+            </span>
+          </button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
