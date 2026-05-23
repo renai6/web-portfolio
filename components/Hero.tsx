@@ -103,14 +103,13 @@ export function Hero() {
             transition={{ delay: 1.1, duration: 0.8 }}
             className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-6 mt-16"
           >
-            <button
+            <motion.button
               onClick={handleDownloadResume}
-              className="group relative px-10 py-5 rounded-2xl overflow-hidden border border-green-400/30 bg-[#0a2414] hover:scale-105 transition-all"
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative flex items-center gap-3 text-xl font-semibold text-white"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition" />
-
-              <span className="relative z-10 flex items-center gap-3 text-lg font-semibold">
-                Download Resume
+              <span className="mb-3 flex gap-2 items-center cursor-pointer ">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -122,20 +121,22 @@ export function Hero() {
                   <path
                     d="M12 3V16M12 16L16 11.625M12 16L8 11.625"
                     stroke="currentColor"
-                    strokeWidth="1.5"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15M21 15C21 17.8284 21 19.2426 20.1213 20.1213C19.8215 20.4211 19.4594 20.6186 19 20.7487"
                     stroke="currentColor"
-                    strokeWidth="1.5"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
+                Download Resume
               </span>
-            </button>
+              <motion.div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full w-full" />
+            </motion.button>
           </motion.div>
         </div>
 

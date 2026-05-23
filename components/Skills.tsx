@@ -41,7 +41,6 @@ const skillCategories = [
       "GraphQL",
       "PHP",
       "Laravel",
-      "Spring Boot",
       "Django",
       "FastAPI",
     ],
