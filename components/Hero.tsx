@@ -62,7 +62,7 @@ export function Hero() {
           {/* TEXT */}
           <div className="order-2 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
-              Full Stack Engineer
+              Full Stack Software Engineer
               <br />
               <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
                 &amp; System Architect
@@ -72,9 +72,9 @@ export function Hero() {
             <div className="mt-8 h-1 w-20 rounded-full bg-gradient-to-r from-green-400 to-emerald-500" />
 
             <p className="mt-8 max-w-xl text-gray-400 text-base md:text-lg leading-8">
-              Experienced Full Stack Software Engineer with 8 years of
-              expertise in building scalable applications and silently judging
-              badly named variables.
+              Experienced Full Stack Software Engineer with 8 years of expertise
+              in building scalable applications and silently judging badly named
+              variables.
             </p>
 
             {/* CREDENTIALS */}
