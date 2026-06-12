@@ -8,21 +8,21 @@ export function Footer() {
 
   return (
     <footer className="border-t border-white/10 py-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-6">
-        <div>
-          <h3 className="text-2xl font-black">Raffi Muloc</h3>
+      <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="text-center sm:text-left">
+          <h3 className="text-xl font-bold">Raffi Muloc</h3>
 
-          <p className="text-gray-400 mt-2">raffibucog@gmail.com</p>
-          <p className="text-gray-400 mt-2">+63 956 930 3690</p>
+          <p className="text-gray-400 text-sm mt-2">raffibucog@gmail.com</p>
+          <p className="text-gray-400 text-sm mt-1">+63 956 930 3690</p>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           {socials.map((s) => (
             <button
               key={s.name}
               aria-label={s.name}
               onClick={() => handleSocialRedirect(s.link)}
-              className="w-16 h-16 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl flex items-center justify-center hover:scale-110 hover:border-emerald-400/40 transition-all"
+              className="w-10 h-10 rounded-full border border-white/10 bg-white/[0.03] flex items-center justify-center cursor-pointer hover:border-emerald-400/40 transition-colors [&_svg]:w-5 [&_svg]:h-5"
             >
               {s.svg}
             </button>
